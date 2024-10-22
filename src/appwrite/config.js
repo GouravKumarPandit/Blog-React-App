@@ -8,11 +8,11 @@ export class Service{
 
     constructor(){
         this.client
-        .setEndpoint(conf.appwriteUrl)
-        .setProject(conf.appwriteProjectId);
+            .setEndpoint(conf.appwriteUrl)
+            .setProject(conf.appwriteProjectId);
 
-        this.database = new Databases(this.client);
-        this.bucket = new Storage(this.client);
+        this.database = new Databases(this.client); // This is to deal with Post table.
+        this.bucket = new Storage(this.client); // This is to deal with Store.
     }
 
     // Creating POST(ARTICLE)
@@ -144,7 +144,7 @@ export class Service{
             return this.bucket.getFilePreview(
                 conf.appwriteBucketId, 
                 ID.unique(),
-                fileId
+                fileId // This we will pass when we will call this function, this will be the stored image ID
             );
         } catch (error) {
             console.log("Appwrite >> config >> service :: getFilePreview :: ERROR ", error);
