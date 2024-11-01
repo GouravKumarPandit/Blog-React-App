@@ -38,7 +38,7 @@ export class Service{
     }
 
     // Updating POST(ARTICLE)
-    async updatePost({title, slug, content, featuredImage, status}){
+    async updatePost(slug, {title, content, featuredImage, status}){
         try {
             // featuredImage will be returned number after storing image in BUCKET 
             return await this.database.updateDocument(
