@@ -4,9 +4,8 @@ function Select({
     options,
     label,
     className = "",
-    ...props,
-    ref
-}) {
+    ...props
+}, ref) {
     const id = useId();
 
     return (
