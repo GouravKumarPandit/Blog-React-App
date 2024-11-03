@@ -35,7 +35,7 @@ function Signup() {
 
     return (
         <div className="flex items-center justify-center">
-            <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
+            <div className={`mx-auto w-full shadow-lg max-w-lg bg-blue-100 opacity-75 rounded-xl p-10 border border-blue-100`}>
                 <div className="mb-2 flex justify-center">
                     <span className="inline-block w-full max-w-[100px]">
                         <Logo width="100%" />
@@ -46,14 +46,14 @@ function Signup() {
                     Already have an account?&nbsp;
                     <Link
                         to="/login"
-                        className="font-medium text-primary transition-all duration-200 hover:underline"
+                        className="font-medium text-blue-700 transition-all duration-200 hover:underline"
                     >
                         Sign In
                     </Link>
                 </p>
                 {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
 
-                <form onSubmit={handleSubmit(create)}>
+                <form onSubmit={handleSubmit(create)} className='mt-5'>
                     <div className='space-y-5'>
                         <Input
                             label="Full Name: "
@@ -62,7 +62,7 @@ function Signup() {
                                 required: true,
                             })}
                         />
-                        {errors.name?.type === 'required' && <p role="alert">Full name is required</p>}
+                        {errors.name?.type === 'required' && <span role="alert" className='text-red-950'>Full name is required</span>}
 
                         <Input
                             label="Email: "
@@ -76,7 +76,7 @@ function Signup() {
                                 }
                             })}
                         />
-                        {errors.email?.type === 'required' && <p role="alert">Email is required</p>}
+                        {errors.email?.type === 'required' && <span role="alert" className='text-red-950'>Email is required</span>}
 
                         <Input
                             label="Password: "
@@ -85,9 +85,9 @@ function Signup() {
                             {...register("password", {
                                 required: true,})}
                         />
-                        {errors.password?.type === 'required' && <p role="alert">Password is required</p>}
+                        {errors.password?.type === 'required' && <span role="alert" className='text-red-950'>Password is required</span>}
 
-                        <Button type="submit" className="w-full">
+                        <Button type="submit" className="w-full text-white bg-teal-600 hover:bg-teal-700">
                             Create Account
                         </Button>
                     </div>

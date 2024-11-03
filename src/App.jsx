@@ -23,10 +23,15 @@ function App() {
 	}, [])
 
 	return !loading ? (
-		<div className='min-h-screen flex flex-wrap content-between bg-gray-400'>
+		<div className='min-h-screen flex flex-wrap content-between bg-blue-100' style={{ 
+			backgroundImage: `url("https://img.freepik.com/free-photo/flat-lay-workstation-with-copy-space-laptop_23-2148430879.jpg?t=st=1730621543~exp=1730625143~hmac=cebaa5a24aa907d43605a0ec024df0bc67ea03d99c9c60f504ad4f0d7dd3db90&w=1060")`,
+			backgroundPosition: 'center',
+			backgroundSize: 'cover',
+			backgroundRepeat: 'no-repeat'
+		}}>
 			<div className='w-full block'>
 				<Header />
-				<main>
+				<main className='min-h-[72vh]'>
 					<Outlet />
 				</main>
 				<Footer />

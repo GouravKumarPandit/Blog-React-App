@@ -19,8 +19,8 @@ function Home() {
                 <Container>
                     <div className="flex flex-wrap">
                         <div className="p-2 w-full">
-                            <h1 className="text-2xl font-bold hover:text-gray-500">
-                                No Post Found!
+                            <h1 className="text-2xl font-bold hover:text-gray-500 text-white">
+                                Please Login to See All Posts!
                             </h1>
                         </div>
                     </div>

@@ -35,8 +35,8 @@ function Login() {
     }
 
     return (
-        <div className='flex items-center justify-center w-full'>
-            <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
+        <div className='flex items-center justify-center w-full my-10'>
+            <div className={`mx-auto w-full shadow-lg max-w-lg bg-blue-100 opacity-75 rounded-xl p-10 border border-blue-100`}>
                 <div className="mb-2 flex justify-center">
                     <span className="inline-block w-full max-w-[100px]">
                         <Logo width="100%" />
@@ -47,7 +47,7 @@ function Login() {
                     Don&apos;t have any account?&nbsp;
                     <Link
                         to="/signup"
-                        className="font-medium text-primary transition-all duration-200 hover:underline"
+                        className="font-medium text-blue-700 transition-all duration-200 hover:underline"
                     >
                         Sign Up
                     </Link>
@@ -69,7 +69,7 @@ function Login() {
                                 }
                             })}
                         />
-                        {errors.email?.type === 'required' && <p role="alert">Email is required</p>}
+                        {errors.email?.type === 'required' && <span role="alert" className='text-red-950'>Email is required</span>}
 
                         <Input
                             label="Password: "
@@ -79,11 +79,11 @@ function Login() {
                                 required: true,
                             })}
                         />
-                        {errors.password?.type === 'required' && <p role="alert">Password is required</p>}
+                        {errors.password?.type === 'required' && <span role="alert" className='text-red-950'>Password is required</span>}
 
                         <Button
                             type="submit"
-                            className="w-full"
+                            className="w-full text-white bg-teal-600 hover:bg-teal-700"
                         >Sign in</Button>
                     </div>
                 </form>
